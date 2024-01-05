@@ -23,7 +23,7 @@ tags:
 
 ```java
 /**
- * 涉密岗位登记导出docx
+ * 岗位登记导出docx
  *  @param request
  * @param vxSecretPersonApply
  * @return
@@ -48,7 +48,7 @@ public ModelAndView downloadSecretRank(HttpServletRequest request, VxSecretPerso
  }
 
  List<VxSecretPersonApplyPage> pageList = new ArrayList<VxSecretPersonApplyPage>();
- TemplateExportParams params = getTemplateParams(property,"涉密岗位登记表","docx");  //获取模板
+ TemplateExportParams params = getTemplateParams(property,"岗位登记表","docx");  //获取模板
  Map<String, Object> map = new HashMap<String, Object>();
 
  SecretPersonExportXls secretPersonExportXls = new SecretPersonExportXls();
@@ -57,7 +57,7 @@ public ModelAndView downloadSecretRank(HttpServletRequest request, VxSecretPerso
 
  // Step.4 easyPoi 导出Excel
  ModelAndView mv = new ModelAndView(new EasypoiTemplateWordView());
- mv.addObject(TemplateWordConstants.FILE_NAME, "涉密岗位登记表");
+ mv.addObject(TemplateWordConstants.FILE_NAME, "岗位登记表");
  mv.addObject(TemplateWordConstants.URL,params.getTemplateUrl());
  mv.addObject(TemplateWordConstants.MAP_DATA,map);
  return mv;
